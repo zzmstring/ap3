@@ -2,6 +2,7 @@ package com.zzmstring.aoobar2;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
@@ -12,6 +13,31 @@ public class MainActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        if (toolbar != null) {
+            setSupportActionBar(toolbar);
+        }
+        toolbar.setLogo(R.mipmap.ic_launcher);
+        toolbar.setTitle("My Title");
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                // Handle the menu item
+                return true;
+            }
+        });
+        // Inflate a menu to be displayed in the toolbar
+        toolbar.inflateMenu(R.menu.menu_main);
+        init();
+        initListener();
+
+    }
+    private void init(){
+
+
+    }
+    private void initListener(){
+
     }
 
 
